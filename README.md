@@ -6,5 +6,5 @@ This program records all mouse movements, mouse clicks, and keyboard actions. Th
 Allows you to replicate anything you do on a computer anytime you want.
 
 Setup:
-1.) pip install pyautogui
-2.) pip install pynput
+1.) pip install pyautogui <br>
+2.) pip install pynput <br>
