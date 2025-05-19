@@ -5,7 +5,7 @@ Youtube: https://www.youtube.com/watch?v=J7vPxMJME8c
 
 This program records all mouse movements, mouse clicks, and keyboard actions. Then it generates a command file that you can play back those same actions later.
 
-Allows you to replicates any actions performed during the recording process on that device.
+Allows you to replicates all actions performed during the time you record actions.
 
 Setup: <br>
 1.) pip install pyautogui <br>
