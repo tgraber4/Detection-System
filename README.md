@@ -19,3 +19,4 @@ How to use playback functionality <br>
 1.) start playback.py <br>
 2.) Press "Tab" key when ready to replicate actions in command file <br>
 3.) Press "Tab" key to end program early or just <br>
+- Note: Can change the key that stops the playback process from "Tab" to any key. Just change the 2nd line of "if key == keyboard.Key.tab:" <br>
