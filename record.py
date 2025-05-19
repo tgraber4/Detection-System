@@ -68,7 +68,6 @@ def on_release(key):
             keyboard_listener.stop()
 
 initializeLastCommands()
-
     
 mouse_listener = mouse.Listener(
     on_move=on_move,

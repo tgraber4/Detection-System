@@ -1,15 +1,20 @@
 import pyautogui
 import time
+import threading
 from pynput import keyboard
 from pynput.mouse import Controller
-mouse = Controller()
 
+mouse = Controller()
 status = "idle"
+runner_thread = None
 
 def readCommandFile():
+    global status
     with open("mouse_log.txt", "r") as file:
         lines = file.readlines()
         for line in lines:
+            if (status == "stop"):
+                break
             parts = line.split(",")
             if (parts[0].strip() == "mm"):
                 time.sleep(0.01)
@@ -37,12 +42,14 @@ def readCommandFile():
                 time.sleep(float(parts[1].strip()))
 
 def on_press(key):  
-    global status
-    print(status)
+    global status, runner_thread
     if (key == keyboard.Key.tab and status == "idle"):
         status = "running"
-        readCommandFile()
+        runner_thread = threading.Thread(target=readCommandFile)
+        runner_thread.start()
     elif (key == keyboard.Key.tab and status == "running"):
+        print("Program stopped")
+        status = "stop"
         return False
 
 
